@@ -1,3 +1,23 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+homepage:
+path: /
+controller: App\Controller\HomeController::index 
+
+picture_show:
+path: /{id}
+controller: App\Controller\PictureController::index
+requirements:
+    id: '\d+'
+
+picture_add:
+path: /add
+controller: App\Controller\PictureController::edit
+
+picture_remove:
+path: /remove/{id}
+controller: App\Controller\PictureController::remove
+requirements:
+    id: '\d+' 
